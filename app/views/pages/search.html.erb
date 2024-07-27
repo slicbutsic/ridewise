@@ -1,0 +1,13 @@
+<div class="container">
+  <%= @user.name %> <br>
+
+  <%= render 'shared/form_pick_up' %>
+
+  <% @search_histories.each do |history| %>
+    Pick up history:<%= history.pick_up_address %> <br>
+  <% end %>
+
+  <% @search_histories.each do |history| %>
+    Drop off history: <%= history.drop_off_address %> <br>
+  <% end %>
+</div>

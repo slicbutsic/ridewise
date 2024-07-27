@@ -1,0 +1,23 @@
+<div data-controller="search">
+  <%= form_with url: false, method: :get, html: { data: {search_target: "form"}} do |form| %>
+    <%= form.label :pick_up_address, "Pick up address" %>
+
+        <%= form.text_field :pick_up_address,
+                     placeholder: "Pick up address",
+                     value: params[:pick_up_address],
+                     data: {search_target: "pickUpAddressInput"} %>
+
+    <%= form.label :drop_off_address, "Drop off address" %>
+
+            <%= form.text_field :drop_off_address,
+                     placeholder: "drop off address",
+                     value: params[:drop_off_address],
+                     data: {search_target: "dropOffAddressInput"} %>
+
+    <%= form.submit "Search", data: {
+                        action: "click->search#getPrices"
+                      } %>
+
+  <% end %>
+
+</div>
